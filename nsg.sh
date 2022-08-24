@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Create NSG"
-location=uksouth
-resource=automation
+location=ukwest
+resource=automationbash
 arrayName=(NsgUbuntu NsgWindows)
 arrayruleubuntu=(Allow Outbound)
 arrayrulewindows=(Allow Deny Tcp 3389 Inbound)
