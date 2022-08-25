@@ -17,5 +17,4 @@ steps:
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
-      az --version
-      az account show
+      az network vnet list -o table
