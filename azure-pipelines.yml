@@ -16,4 +16,4 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: |
-      './group.sh'
+      'group.sh'
