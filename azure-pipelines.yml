@@ -7,15 +7,14 @@ trigger: none
 
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
 - task: AzureCLI@2
   displayName: Azure CLI
   inputs:
     azureSubscription: bash
-    scriptType: ps
-    scriptLocation: inlineScript
-    inlineScript: |
-      az --version -o table
-      az account show -o table
+    scriptType: bash
+    scriptLocation: 'scriptPath'
+    scriptPath: './group.sh'
+    
