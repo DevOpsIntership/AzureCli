@@ -17,3 +17,4 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: |
       ./group.sh
+      ./vnet.sh
