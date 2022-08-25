@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "create resource group"
-echo "location"
-read location
-echo "name"
-read name
+location=ukwest
+name=test
 az group create --location $location --name $name
