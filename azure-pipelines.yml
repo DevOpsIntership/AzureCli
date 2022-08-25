@@ -17,5 +17,5 @@ steps:
     scriptType: ps
     scriptLocation: inlineScript
     inlineScript: |
-      az --version
-      az account show
+      az --version -o table
+      az account show -o table
