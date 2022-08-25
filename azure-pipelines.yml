@@ -16,5 +16,5 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
     scriptPath: |
-      ./group.sh
-      ./vnet.sh
+        ./group.sh
+        ./vnet.sh
