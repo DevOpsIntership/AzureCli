@@ -7,16 +7,15 @@ trigger: none
 
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows:latest
 
 steps:
 - task: AzureCLI@2
   displayName: Azure CLI
   inputs:
-    azureSubscription: bash
-    scriptType: bash
- 
-- task: CmdLine@2
-  inputs:
-    script: |
-            az network vnet list -o table
+    azureSubscription: <Name of the Azure Resource Manager service connection>
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az account show
