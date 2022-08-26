@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Creating backup"
 
-resourceGroup="automationbash"
+resourceGroup=$1
 webapp="dotnetwebappbackup"
 storage="accountstorageadam7652"
 container="dotnetbackup2"
