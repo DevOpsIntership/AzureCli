@@ -18,4 +18,5 @@ jobs:
       with:
         azcliversion: 2.39.0
         inlineScript: |
-                        ./vnet.sh 
+                        chmod +x $GITHUB_WORKSPACE/vnet.sh
+                        $GITHUB_WORKSPACE/vnet.sh
