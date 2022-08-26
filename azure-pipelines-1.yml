@@ -1,0 +1,34 @@
+trigger: none
+
+
+pool:
+  vmImage: ubuntu-latest
+variables:
+ rg: 'automationbash'
+
+steps:
+- task: AzureCLI@2
+  displayName: Create AppService
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './AppService.sh'
+    arguments: $(rg)
+
+- task: AzureCLI@2
+  displayName: Create AppService
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './accountstorage.sh'
+    arguments: $(rg)
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './backup.sh'
+    arguments: '$(rg)'
