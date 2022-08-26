@@ -24,4 +24,4 @@ jobs:
         azcliversion: 2.30.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/delete.sh
-                       $GITHUB_WORKSPACE/vnet.sh automation   
+                       $GITHUB_WORKSPACE/delete.sh automation   
