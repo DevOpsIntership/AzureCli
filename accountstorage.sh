@@ -1,5 +1,5 @@
 #!/bin/bash
-location=ukwest
+location=$1
 resourceGroup="automationbash"
 storage="accountstorageadam7652"
 container="dotnetbackup2"
