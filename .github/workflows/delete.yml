@@ -1,0 +1,27 @@
+on: workflow_dispatch
+
+name: AzureCliDepluInfra
+
+jobs:
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+    - name: Checkout
+      uses: actions/checkout@v1
+      
+      
+ 
+    - name: Azure CLI vnet
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/delete.sh
+                       $GITHUB_WORKSPACE/vnet.sh automation   
