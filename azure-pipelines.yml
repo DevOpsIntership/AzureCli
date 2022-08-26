@@ -16,5 +16,5 @@ steps:
     azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
-    scriptPath: './vnet'
+    scriptPath: './vnet.sh'
     arguments: 'automationbash'
