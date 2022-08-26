@@ -20,7 +20,7 @@ jobs:
     - name: Azure CLI AppService
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
+        azcliversion: 2.39.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/AppService.sh
                        $GITHUB_WORKSPACE/AppService.sh automation
@@ -30,7 +30,7 @@ jobs:
     - name: Azure CLI Create StorageAccount
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
+        azcliversion: 2.39.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/accountstorage.sh
                        $GITHUB_WORKSPACE/accountstorage.sh automation 
@@ -38,7 +38,7 @@ jobs:
     - name: Azure CLI Create Backup
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
+        azcliversion: 2.39.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/backup.sh
                        $GITHUB_WORKSPACE/backup.sh automation
