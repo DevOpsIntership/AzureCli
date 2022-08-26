@@ -1,4 +1,4 @@
-on: [push]
+on: workflow_dispatch
 
 name: AzureCliDepluInfra
 
@@ -22,5 +22,33 @@ jobs:
       with:
         azcliversion: 2.30.0
         inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/nsg.sh
+                       $GITHUB_WORKSPACE/nsg.sh automation
+                       
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/vnet.sh
-                       $GITHUB_WORKSPACE/vnet.sh automation
+                       $GITHUB_WORKSPACE/vnet.sh automation                    
+                       
+                       
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/assigns.sh
+                       $GITHUB_WORKSPACE/assigns.sh automation
+                       
+                       
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/vm.sh
+                       $GITHUB_WORKSPACE/vm.sh automation  ${{ secrets.WindowsPsss }}                      
+                       
+  
