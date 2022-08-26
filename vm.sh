@@ -64,7 +64,7 @@ az network nic create \
             --resource-group $rg\
             --image $vmimagew\
             --admin-username azureuser\
-            --admin-password $2\
+            --admin-password $windowspass\
             --nics $NicnameWindows\
             --storage-sku $VmDisktier\
             
