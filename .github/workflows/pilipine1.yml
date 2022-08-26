@@ -17,14 +17,7 @@ jobs:
       uses: actions/checkout@v1
       
       
-    - name: Azure CLI login
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.30.0
-        inlineScript: |
-                       chmod +x $GITHUB_WORKSPACE/nsg.sh
-                       $GITHUB_WORKSPACE/nsg.sh automation
-                       
+ 
     - name: Azure CLI vnet
       uses: azure/CLI@v1
       with:
