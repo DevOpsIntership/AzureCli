@@ -1,6 +1,6 @@
 #!/bin/bash
-location=$1
-resourceGroup="automationbash"
+location=ukwest
+resourceGroup=$1
 storage="accountstorageadam7652"
 container="dotnetbackup2"
 access="Hot"
