@@ -17,7 +17,7 @@ az appservice plan create\
     --sku $Pricing_tier\
 
     az webapp create\
-    --resource-group automationbash\
+    --resource-group $rg\
     --plan $Name\
     --name adam98022test\
     --deployment-container-image-name $Docker_Hub_image\
