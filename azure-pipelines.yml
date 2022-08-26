@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger: none
 
 
@@ -29,4 +24,30 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './nsg.sh'
     arguments: '$(rg)'
+
+- task: AzureCLI@2
+  displayName: Assign NSG to Subnet
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './assigns.sh'
+    arguments: '$(rg)'
     
+- task: AzureCLI@2
+  displayName: Assign NSG to Subnet
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './assigns.sh'
+    arguments: '$(rg)'
+
+- task: AzureCLI@2
+  displayName: Create Vms
+  inputs:
+    azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './vm.sh'
+    arguments: '$(rg)'       
