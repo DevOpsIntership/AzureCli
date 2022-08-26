@@ -17,7 +17,7 @@ steps:
     arguments: $(rg)
 
 - task: AzureCLI@2
-  displayName: Create AppService
+  displayName: Create StorageAccount
   inputs:
     azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
     scriptType: 'bash'
@@ -26,6 +26,7 @@ steps:
     arguments: $(rg)
 
 - task: AzureCLI@2
+  displayName: Create Backup
   inputs:
     azureSubscription: 'Azure subscription 1(c726bf38-5524-4f36-ae0c-e87f35b14d51)'
     scriptType: 'bash'
