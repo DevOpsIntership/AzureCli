@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "create vnet"
 name=Vnet
-location=ukwest
+location=$1
 resource=automationbash
 address=10.0.0.0/16
 subnetArray=(10.0.0.0/25 10.0.0.128/25)
