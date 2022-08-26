@@ -49,6 +49,6 @@ jobs:
         azcliversion: 2.30.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/vm.sh
-                       $GITHUB_WORKSPACE/vm.sh automation  ${{ secrets.WindowsPsss }}                      
+                       $GITHUB_WORKSPACE/vm.sh automation  ${{ secrets.WINDOWSPSSS }}                      
                        
   
