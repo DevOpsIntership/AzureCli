@@ -6,9 +6,10 @@ Name=AppServiceTest
 Pricing_tier=B1
 Nodes_in_web_farm=2
 Docker_Hub_image=docker/getting-started
+rg=$1
 
 az appservice plan create\
-    --resource-group automationbash\
+    --resource-group $rg\
     --name $Name\
     --location $Region\
     --is-linux\
