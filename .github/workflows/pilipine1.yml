@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v1
       
       
-    - name: Azure CLI script
+    - name: Azure CLI login
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
@@ -25,16 +25,24 @@ jobs:
                        chmod +x $GITHUB_WORKSPACE/nsg.sh
                        $GITHUB_WORKSPACE/nsg.sh automation
                        
-    - name: Azure CLI script
+    - name: Azure CLI vnet
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
         inlineScript: |
                        chmod +x $GITHUB_WORKSPACE/vnet.sh
                        $GITHUB_WORKSPACE/vnet.sh automation                    
+  
+  
+    - name: Azure CLI nsg
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/nsg.sh
+                       $GITHUB_WORKSPACE/nsg.sh automation 
                        
-                       
-    - name: Azure CLI script
+    - name: Azure CLI assign
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
@@ -43,7 +51,7 @@ jobs:
                        $GITHUB_WORKSPACE/assigns.sh automation
                        
                        
-    - name: Azure CLI script
+    - name: Azure CLI vm
       uses: azure/CLI@v1
       with:
         azcliversion: 2.30.0
