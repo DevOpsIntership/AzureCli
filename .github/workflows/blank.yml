@@ -1,0 +1,47 @@
+on: workflow_dispatch
+
+name: StorageAndBackup
+
+jobs:
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+    - name: Checkout
+      uses: actions/checkout@v1
+      
+      
+    - name: Azure CLI AppService
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/AppService.sh
+                       $GITHUB_WORKSPACE/AppService.sh automation
+                                           
+  
+  
+    - name: Azure CLI Create StorageAccount
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/accountstorage.sh
+                       $GITHUB_WORKSPACE/accountstorage.sh automation 
+                       
+    - name: Azure CLI Create Backup
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+                       chmod +x $GITHUB_WORKSPACE/backup.sh
+                       $GITHUB_WORKSPACE/backup.sh automation
+                       
+                       
+    
