@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Create AppService"
 
-Region=ukwest
+Region=$1
 Name=AppServiceTest
 Pricing_tier=B1
 Nodes_in_web_farm=2
