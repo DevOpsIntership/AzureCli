@@ -16,7 +16,7 @@ Ipnamewindows=ipjumpbox01
 Nicnameubuntu=(NicUbuntu01 Nicnubuntu02 Nicubuntu03)
 NicnameWindows=jumpox01nic
 dnsname=(agnent-01ubuntutest11 agent-02ubuuntutest22 agent-03ubuntutest33)
-
+windowspass=$2
 for ((i=0; i<3; i++))
 do
 az network public-ip create \
@@ -64,6 +64,7 @@ az network nic create \
             --resource-group $rg\
             --image $vmimagew\
             --admin-username azureuser\
+            --admin-password $2\
             --nics $NicnameWindows\
             --storage-sku $VmDisktier\
             
