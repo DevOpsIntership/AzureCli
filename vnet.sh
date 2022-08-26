@@ -2,7 +2,7 @@
 echo "create vnet"
 name=Vnet
 location=ukwest
-resource=$1
+resource=automation
 address=10.0.0.0/16
 subnetArray=(10.0.0.0/25 10.0.0.128/25)
 subnetName=(ubuntu windows)
